@@ -1,0 +1,129 @@
+*{
+    direction: rtl;
+    text-align: right;
+    outline: none;
+    text-decoration: none !important;
+}
+/* end glopal */
+header.login {
+    height: 50vh;
+    /* background-image: url('./assets/msg1246182069-95768.jpg');   */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+}
+header.login  img {
+    width:1300px
+}
+header.login  h1 {
+    color: #4E9D63;
+}
+form.login input {
+    border: 1px solid #A2A2A2;
+    border-radius: 10px;
+    padding: 10px 30px 10px 30px;
+    width: 100%;
+}
+form.login ::placeholder {
+    font-size: 15px;
+    color: #A2A2A2;
+}
+form.login .form-group {
+    position: relative;
+}
+form.login .form-group i {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #A2A2A2;
+} 
+form.login .abtn
+{
+    background: #59A36D;
+    color: white;
+    border:none;
+    padding: 10px;
+    display: inline-block;
+}
+form.login a
+{
+    color: #59A36D;
+}
+/* end login paage ///////////////////////////////////// */
+.cats {
+    min-height: 100vh;
+    background-size: cover; 
+    background-image: url("./assets/msg1246182069-95768.jpg"); 
+}
+.cats .item {
+    padding:20px;
+    border: 1px solid #A2A2A2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: 100%;
+}
+.cats .item p.count {
+    font-weight: bold;
+    border:2px solid #59A36D;
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    text-align: center;
+}
+.cats .item p
+{
+    margin-bottom: 10px;
+    color:#59A36D;
+}
+/* end categories paage ///////////////////////////////////// */
+.signup {
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    background-image: url("./assets/msg1246182069-95768.jpg");
+}
+.details_btns button
+{
+    background: #BFD0A6;
+    border:none;
+    border-radius: 10px;
+    padding: 15px;
+}
+.fa-eye,.fa-eye-slash {
+    left:10px !important;
+    right: auto !important;
+    cursor: pointer;
+}
+.category_name {
+    border:2px solid rgb(95, 156, 100);
+    border-radius: 3px;
+    padding:10px;
+    font-size: 20px;
+    text-align: center;
+    width: 130px;
+    height: 50px ;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 30px auto;
+    
+}
+.words{
+    color: #0db63a;
+    background-color: white;
+    width: 130px;
+   
+    text-align: center;
+    margin: 20px auto;
+
+
+}
+
