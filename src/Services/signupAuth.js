@@ -19,16 +19,14 @@ const signupfun = async (username, email, pass, cpass) => {
       score: "0",
     }),
   });
-  const result = await res.json();
 
+  const result = await res.json();
   if (res.status === 201) {
     Cookies.set("user", JSON.stringify(result["data"]), {
       expires: 7,
     });
-    return "";
-  } else {
-    return result["errors"][0]["msg"];
-  }
+    return "user created successfully";
+  } else return "email alredy exists";
 };
 
 export default signupfun;

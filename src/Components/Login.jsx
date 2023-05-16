@@ -31,7 +31,7 @@ function Login() {
           <div className="col-md-4">
             <div className="form-group text-center mb-3">
               <input
-                type="text"
+                type="email"
                 placeholder=" البريد الالكتروني"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +62,7 @@ function Login() {
             {loginerr && (
               <div className="d-block text-center mb-2">{loginerr}</div>
             )}
-            <Link to="" className="d-block text-center mb-2">
+            <Link to="/forget_password" className="d-block text-center mb-2">
               نسيت كلمة السر ... ؟
             </Link>
             <Link to="/Signup" className="d-block text-center mb-2">

@@ -55,6 +55,16 @@ function Signup() {
             </div>
             <div class="form-group text-center mb-3">
               <input
+                type="email"
+                required
+                placeholder="البريد الالكتروني"
+                name="mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div class="form-group text-center mb-3">
+              <input
                 id="pass"
                 type="password"
                 placeholder="تعيين كلمة السر"
@@ -79,16 +89,7 @@ function Signup() {
               <i class="fa-solid fa-lock"></i>
               <i id="iconcpass" class="fa-solid fa-eye"></i>
             </div>
-            <div class="form-group text-center mb-3">
-              <input
-                type="email"
-                required
-                placeholder="البريد الالكتروني"
-                name="mail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
+
             <div class="text-center mb-3">
               <input type="submit" value="انشاء حساب" class="abtn" />
             </div>
