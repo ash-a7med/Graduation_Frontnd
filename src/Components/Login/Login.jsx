@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import img1 from "../assets/msg857782380-96632.jpg";
-import loginfun from "../Services/loginAuth";
+import img1 from "../../assets/msg857782380-96632.jpg";
+import loginfun from "./loginAuth";
+import { useNavigate } from "react-router-dom/dist";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [loginerr, setLoginerr] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +19,12 @@ function Login() {
       console.log(error.message);
     }
   };
+
+  useEffect(() => {
+    if (loginerr === "login...") {
+      navigate("/home");
+    }
+  }, [loginerr]);
 
   return (
     <>
@@ -32,7 +40,9 @@ function Login() {
             <div className="form-group text-center mb-3">
               <input
                 type="email"
-                placeholder=" البريد الالكتروني"
+                required
+                placeholder="البريد الالكتروني"
+                name="mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />

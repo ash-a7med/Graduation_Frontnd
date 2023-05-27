@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import signupfun from "../Services/signupAuth";
+import { useNavigate } from "react-router-dom";
+import signupfun from "./signupAuth";
 
 function Signup() {
   const [firstname, setFirstname] = useState("");
@@ -9,21 +10,20 @@ function Signup() {
   const [pass, setPass] = useState("");
   const [cpass, setCpass] = useState("");
   const [signuperr, setSignuperr] = useState("");
+  const navigate = useNavigate();
 
   const onsubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await signupfun(
-        firstname + " " + lastname,
-        email,
-        pass,
-        cpass
-      );
-      setSignuperr(res);
-    } catch (err) {
-      console.log(err.message);
-    }
+
+    const res = await signupfun(firstname + " " + lastname, email, pass, cpass);
+    setSignuperr(res);
   };
+
+  useEffect(() => {
+    if (signuperr === "user created successfully") {
+      navigate("/home");
+    }
+  }, [signuperr]);
 
   return (
     <section class="signup">

@@ -26,7 +26,13 @@ const signupfun = async (username, email, pass, cpass) => {
       expires: 7,
     });
     return "user created successfully";
-  } else return "email alredy exists";
+  } else {
+    const shortPass = result.errors;
+    if (shortPass) {
+      return shortPass[0].msg;
+    }
+    return "email alredy exists";
+  }
 };
 
 export default signupfun;

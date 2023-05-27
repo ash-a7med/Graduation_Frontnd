@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import reset_passwordfun from "../Services/rest_passwordService";
+import reset_passwordfun from "./rest_passwordService";
 
 function Reset_password() {
   const [pass, setPass] = useState("");
