@@ -3,16 +3,24 @@ import { useEffect, useState } from "react";
 import Suar from "./Surah.json";
 import { createAudio, numbers } from "./DetailsService";
 
-function Details() {
+import { useParams } from "react-router-dom";
+
+function Details({ surahs }) {
+  const { currentSurah } = useParams();
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(1);
-  let [currentSurah, setCurrentSurah] = useState(1);
-  let [num_t, setNum_t] = useState(1);
-  const [num_a, setNum_a] = useState(1);
 
-  useEffect(() => {
-    setCurrentSurah(Cookies.get("currentsurah"));
-  }, []);
+  let [num_t, setNum_t] = useState(1);
+
+  function createAyat() {
+    let ayat = surahs[currentSurah - 1].ayahs.map((aya) => (
+      <span>
+        {aya.text} {aya.verse}
+      </span>
+    ));
+
+    return ayat;
+  }
 
   return (
     <section class="signup">
@@ -35,7 +43,11 @@ function Details() {
         >
           {numbers(Suar[currentSurah].nAyah)}
         </select>
-        <button onClick={() => createAudio(currentSurah, start, end, num_t)}>
+        <button
+          onClick={() => {
+            createAudio(currentSurah, start, end, num_t);
+          }}
+        >
           {" "}
           submit
         </button>
@@ -48,6 +60,7 @@ function Details() {
           {numbers(50)}
         </select>
       </div>
+      <div>{createAyat()}</div>
     </section>
   );
 }

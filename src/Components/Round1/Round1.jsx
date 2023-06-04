@@ -1,36 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Suar from "./Surah.json";
-import Cookies from "js-cookie";
+import React, { Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Round1() {
-  function CreateSuar() {
-    let options = [];
-    for (let i = 78; i <= 114; ++i) {
-      options.push(
-        <Link
-          to="/details"
-          onClick={() => {
-            Cookies.set("currentsurah", i);
-          }}
-        >
-          <div className="words">
-            <h2 class="category_name">{Suar[i].name}</h2>
-          </div>
-        </Link>
-      );
-    }
-    return options;
-  }
-
-  return (
-    <section class="cats py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-3">{CreateSuar()}</div>
+function Round1({ surahs }) {
+  const navigate = useNavigate();
+  const suars = surahs.filter((surah) => surah.number >= 78);
+  const suarsItem = suars.map((surah) => {
+    return (
+      <div
+        key={surah.number}
+        className="cursor-pointer"
+        onClick={() => navigate(`/details/${surah.number}`)}
+      >
+        <div className="words">
+          <h2 className="category_name">{surah.name}</h2>
         </div>
       </div>
-    </section>
+    );
+  });
+  const suarsItemLength = Math.floor(suarsItem.length / 2);
+  const firstHalf = suarsItem.slice(0, suarsItemLength);
+  const secondHalf = suarsItem.slice(suarsItemLength);
+  return (
+    <div className="cats py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 ">{firstHalf}</div>
+          <div className="col-md-6 ">{secondHalf}</div>
+        </div>
+      </div>
+    </div>
   );
 }
 
