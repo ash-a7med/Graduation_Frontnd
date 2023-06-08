@@ -1,0 +1,21 @@
+.tafseer{
+    min-height: 100vh;
+    background-size: cover;
+    background-image: url("../../assets/msg1246182069-95768.jpg");
+}
+.quran-tafseer {
+  /* Add styles to the parent div */
+  font-family: 'Cairo', sans-serif;
+  padding: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid ;
+}
+
+.ayah {
+  font-weight: bold;
+  color:#0db63a;
+}
+
+.tafseer {
+  font-style: italic;
+}

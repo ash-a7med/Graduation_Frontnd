@@ -7,13 +7,9 @@
 /* end glopal */
 header.login {
     height: 50vh;
-    /* background-image: url('./assets/msg1246182069-95768.jpg');   */
     display: flex;
     justify-content: center;
     align-items: center; 
-    /* background-size: contain; */
-    /* background-repeat: no-repeat; */
-    /* background-position: center; */
 }
 header.login  img {
     width:1300px
@@ -108,7 +104,7 @@ form.login a
     padding:10px;
     font-size: 20px;
     text-align: center;
-    width: 130px;
+    width: 100%;
     height: 50px ;
     white-space: nowrap;
     overflow: hidden;
@@ -117,13 +113,20 @@ form.login a
     
 }
 .words{
-    color: #0db63a;
-    background-color: white;
-    width: 130px;
-   
+    
+    width: 200px;
     text-align: center;
     margin: 20px auto;
-
-
 }
 
+.words h2{
+    color: #0db63a;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.words h2:hover{
+    transform: scale(1.2);
+    background-color: #0db63a;
+    color: white;
+}
