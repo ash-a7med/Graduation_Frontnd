@@ -1,18 +1,40 @@
 import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Suar from "./Surah.json";
 import { createAudio, numbers } from "./DetailsService";
-
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Details({ surahs }) {
+  const audioRef = useRef(null);
+  const navigate = useNavigate();
   const { currentSurah } = useParams();
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(1);
-
   let [num_t, setNum_t] = useState(1);
+  let [num_a, setNum_a] = useState(1);
 
-  function createAyat() {
+  async function playAudio(AyatAudio) {
+    for (let t = 0; t < num_t; t++) {
+      for (let i = 0; i < AyatAudio.length; i++) {
+        audioRef.current = AyatAudio[i];
+
+        for (let a = 0; a < num_a; a++) {
+          audioRef.current.play();
+
+          await new Promise((resolve) => {
+            audioRef.current.onended = resolve;
+          });
+        }
+      }
+    }
+  }
+
+  function turnOnAudio() {
+    let AyatAudio = createAudio(currentSurah, start, end);
+    playAudio(AyatAudio);
+  }
+
+  function createAyatText() {
     let ayat = surahs[currentSurah - 1].ayahs.map((aya) => (
       <span>
         {aya.text} {aya.verse}
@@ -32,7 +54,7 @@ function Details({ surahs }) {
           }}
           value={start}
         >
-          {numbers(Suar[currentSurah].nAyah)}
+          {numbers(surahs[currentSurah - 1].numberOfAyahs)}
         </select>
 
         <select
@@ -41,12 +63,13 @@ function Details({ surahs }) {
           }}
           value={end}
         >
-          {numbers(Suar[currentSurah].nAyah)}
+          {numbers(surahs[currentSurah - 1].numberOfAyahs)}
         </select>
         <button
           onClick={() => {
-            createAudio(currentSurah, start, end, num_t);
+            turnOnAudio();
           }}
+          disabled={false}
         >
           {" "}
           submit
@@ -59,8 +82,21 @@ function Details({ surahs }) {
         >
           {numbers(50)}
         </select>
+
+        <select
+          onChange={(event) => {
+            setNum_a(event.target.value);
+          }}
+          value={num_a}
+        >
+          {numbers(50)}
+        </select>
       </div>
-      <div>{createAyat()}</div>
+      <div>{createAyatText()}</div>
+
+      <button class="abtn" onClick={() => navigate(`/tasmee3`)}>
+        تسميع
+      </button>
     </section>
   );
 }

@@ -1,32 +1,17 @@
-let AyatAudio = [];
-let num_t = 1;
-function createAudio(currentSurah, start, end, num) {
-  num_t = num;
-  AyatAudio = [];
+function createAudio(currentSurah, start, end) {
+  let AyatAudio = [];
   let zeros = currentSurah <= 9 ? `00` : currentSurah <= 99 ? `0` : ``;
   for (let i = start; i <= end; ++i) {
     AyatAudio.push(
       new Audio(
-        `https://everyayah.com/data/Abdullah_Basfar_32kbps/${zeros}${currentSurah}00${i}.mp3`
+        `https://everyayah.com/data/Abdullah_Basfar_32kbps/${zeros}${currentSurah}0${
+          i < 10 ? `0${i}` : i
+        }.mp3`
       )
     );
   }
 
-  playAudio(0);
-}
-
-function playAudio(audioPointer) {
-  if (audioPointer < AyatAudio.length) {
-    AyatAudio[audioPointer].addEventListener("ended", () => {
-      playAudio(audioPointer + 1);
-    });
-    AyatAudio[audioPointer].play();
-  } else {
-    if (num_t > 1) {
-      num_t = num_t - 1;
-      playAudio(0);
-    }
-  }
+  return AyatAudio;
 }
 
 function numbers(len) {
