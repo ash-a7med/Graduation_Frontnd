@@ -1,6 +1,7 @@
 import { useState } from "react";
 import forget_passwordfun from "./forget_passwordService";
 
+
 function Forget_password() {
   const [email, setEmail] = useState("");
   const [result, setResult] = useState("");
@@ -12,13 +13,13 @@ function Forget_password() {
   };
 
   return (
-    <div className="container">
-      <form className="login row" onSubmit={onSubmit}>
-        <div className="col-md-4"></div>
+    <div className=" d-flex align-items-center">
+    <div className="container" style={{height:"100vh"}}>
+      <form className="login row justify-content-center align-items-center w-100 h-100" onSubmit={onSubmit}>
         {result !== "done" ? (
-          <div className="col-md-4">
-            <div className="form-group text-center mb-3">
-              <label>enter your email</label>
+          <div className="col-md-8">
+              <div className="form-group text-center mb-3">
+              <label className="form-label">enter your email</label>
               <input
                 id="email"
                 type="email"
@@ -40,6 +41,7 @@ function Forget_password() {
           "link has been send to your email"
         )}
       </form>
+      </div>
     </div>
   );
 }

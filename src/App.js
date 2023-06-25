@@ -8,6 +8,8 @@ import Signup from "./Components/Signup/Signup";
 import Categories from "./Components/Categories/Categories";
 import Round1 from "./Components/Round1/Round1";
 import Details from "./Components/Details/Details";
+import Suars from "./Components/Suars/Suars";
+import Tafseer from "./Components/Tafseer/Tafseer";
 import Forget_password from "./Components/Forget_password/Forget_password";
 import Reset_password from "./Components/Reset_password/Reset_password";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -53,17 +55,17 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/details/:currentSurah" element={<Details surahs={surahs} />} />
+
           <Route path="/signup" element={<Signup />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="round1" element={<Round1 surahs={surahs} />} />
-          <Route
-            path="/details/:currentSurah"
-            element={<Details surahs={surahs} />}
-          />
+          <Route path="/tafseer/:surahID" element={<Tafseer surahs={surahs} />} />
+          <Route path="/suars" element={<Suars surahs={surahs} />} />
           <Route path="/tasmee3" element={<Tasmee3 />} />
           <Route path="/forget_password" element={<Forget_password />} />
           <Route
-            path="/reset_password/:id/:token"
+            path="/reset_password/"
             element={<Reset_password />}
           />
         </Routes>

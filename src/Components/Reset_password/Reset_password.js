@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import reset_passwordfun from "./rest_passwordService";
 
 function Reset_password() {
@@ -14,12 +14,11 @@ function Reset_password() {
   };
 
   return (
-    <div class="container">
-      <form className="login row" onSubmit={onSubmit}>
-        <div className="col-md-4"></div>
-
-        <div className="col-md-4">
+    <div class="container" style={{ height: "100vh" }}>
+      <form className="login row justify-content-center align-items-center w-100 h-100" onSubmit={onSubmit}>
+        <div className="col-md-8">
           <div className="form-group text-center mb-3">
+            <label className="form-label">Enter New Password</label>
             <input
               id="pass"
               type="password"

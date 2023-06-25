@@ -34,9 +34,8 @@ function Login() {
         </div>
       </header>
       <div className="container">
-        <form className="login row" onSubmit={onSubmit}>
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
+        <form className="login row justify-content-center" onSubmit={onSubmit}>
+          <div className="col-md-8">
             <div className="form-group text-center mb-3">
               <input
                 type="email"
@@ -79,7 +78,6 @@ function Login() {
               مستخدم جديد ... ؟
             </Link>
           </div>
-          <div className="col-md-4"></div>
         </form>
       </div>
     </>
