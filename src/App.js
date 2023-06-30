@@ -14,6 +14,9 @@ import Forget_password from "./Components/Forget_password/Forget_password";
 import Reset_password from "./Components/Reset_password/Reset_password";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Tasmee3 from "./Components/Tasmee3/Tasmee3";
+import Profile from "./Components/ProfilePage/Profile";
+import About from './Components/AboutPage/About'
+import Landing from './Components/LandingPage/Landing'
 
 function App() {
   const [currentuser, setCurrentuser] = useState("");
@@ -64,10 +67,10 @@ function App() {
           <Route path="/suars" element={<Suars surahs={surahs} />} />
           <Route path="/tasmee3" element={<Tasmee3 />} />
           <Route path="/forget_password" element={<Forget_password />} />
-          <Route
-            path="/reset_password/"
-            element={<Reset_password />}
-          />
+          <Route path="/reset_password/" element={<Reset_password />}/>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/landing" element={<Landing />} />
         </Routes>
       </div>
     </Router>
