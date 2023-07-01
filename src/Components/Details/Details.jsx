@@ -134,7 +134,10 @@ function Details({ surahs }) {
       </div>
       <div>{createAyatText()}</div>
 
-      <button class="abtn" onClick={() => navigate(`/tasmee3`)}>
+      <button
+        class="abtn"
+        onClick={() => navigate(`/tasmee3/${currentSurah}/${start}/${end}`)}
+      >
         تسميع
       </button>
     </section>

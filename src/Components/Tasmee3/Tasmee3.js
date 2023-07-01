@@ -3,9 +3,16 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { diffChars } from "diff";
+import quran from "./quran_no_tashkeel.json";
+import { useParams } from "react-router-dom";
 
 function Tasmee3() {
-  const [text1, setText1] = useState("عم يتساءلون");
+  let text1 = "";
+  const { currentsurah, start, end } = useParams();
+  for (let i = start - 1; i < end; ++i) {
+    text1 += quran[`${currentsurah}`][i].text;
+  }
+
   const [text2, setText2] = useState("");
   const [stop, setStop] = useState(false);
   const [message, setMessage] = useState("");
