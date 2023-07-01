@@ -4,6 +4,31 @@ import Suar from "./Surah.json";
 import { createAudio, numbers } from "./DetailsService";
 import { useNavigate, useParams } from "react-router-dom";
 
+const styles = {
+  container: {
+    flex: 1,
+  },
+  scroll: {
+    flex: 1,
+    padding: 7,
+  },
+  surahPage: {
+    flex: 1,
+    marginTop: 15,
+    textAlign: "justify",
+  },
+
+  ayat: {
+    flex: 1,
+
+    fontSize: 30,
+  },
+
+  number: {
+    fontSize: 18,
+  },
+};
+
 function Details({ surahs }) {
   const audioRef = useRef(null);
   const navigate = useNavigate();
@@ -35,19 +60,33 @@ function Details({ surahs }) {
   }
 
   function createAyatText() {
-    let ayat = surahs[currentSurah - 1].ayahs.map((aya) => (
-      <span>
-        {aya.text} {aya.verse}
-      </span>
-    ));
+    return (
+      <safeAreaView style={styles.container}>
+        <divider
+          orientation="vertical"
+          width={5}
+          style={{ borderBottomColor: "#545353" }}
+        />
 
-    return ayat;
+        <text style={styles.surahPage} adjustsFontSizeToFit>
+          {surahs[currentSurah - 1].ayahs.map((aya, index) => (
+            <text key={index} allowFontScaling={false} selectable={true}>
+              <text selectable={true} style={styles.ayat}>
+                {aya.text}
+              </text>
+            </text>
+          ))}
+        </text>
+      </safeAreaView>
+    );
   }
 
   return (
     <section class="signup">
       <div class="container">
+        <label>من</label>
         <select
+          className="form-group text-center mb-3"
           onChange={(event) => {
             setStart(event.target.value);
             setEnd(event.target.value);
@@ -56,7 +95,7 @@ function Details({ surahs }) {
         >
           {numbers(surahs[currentSurah - 1].numberOfAyahs)}
         </select>
-
+        <label>الي</label>
         <select
           onChange={(event) => {
             if (event.target.value >= start) setEnd(event.target.value);
@@ -72,17 +111,18 @@ function Details({ surahs }) {
           disabled={false}
         >
           {" "}
-          submit
+          استمع
         </button>
+        <label>عدد مرات تكرار المقطع </label>
         <select
           onChange={(event) => {
             setNum_t(event.target.value);
           }}
           value={num_t}
         >
-          {numbers(50)}
+          {numbers(10)}
         </select>
-
+        <label>عدد مرات تكرار الأية </label>
         <select
           onChange={(event) => {
             setNum_a(event.target.value);
