@@ -14,7 +14,7 @@ function Reset_password() {
     const res = await reset_passwordfun(pass, cpass, id, token);
     setReseterr(res);
     if (!reseterr) {
-      navigate("http://localhost:3000/login");
+      navigate("/login");
     }
   };
 
