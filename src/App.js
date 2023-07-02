@@ -17,38 +17,16 @@ import Tasmee3 from "./Components/Tasmee3/Tasmee3";
 import Profile from "./Components/ProfilePage/Profile";
 import About from "./Components/AboutPage/About";
 import Landing from "./Components/LandingPage/Landing";
+import surahs from "./surah.json";
 
 function App() {
   const [currentuser, setCurrentuser] = useState("");
-  const [surahs, setSurahs] = useState([]);
 
   useEffect(() => {
     const user = Cookies.get("user");
     if (user) {
       setCurrentuser(user);
     }
-    const fetchSurahs = async () => {
-      try {
-        const totalSurahs = 114; // Total number of surahs in the Quran
-
-        const surahsArray = [];
-
-        for (let i = 1; i <= totalSurahs; i++) {
-          const response = await axios.get(
-            `http://api.alquran.cloud/v1/surah/${i}`
-          );
-          const surahData = response.data.data;
-
-          surahsArray.push(surahData);
-        }
-
-        setSurahs(surahsArray);
-      } catch (error) {
-        console.error("Error fetching surahs:", error);
-      }
-    };
-
-    fetchSurahs();
   }, []);
 
   return (
@@ -75,11 +53,12 @@ function App() {
             path="/tasmee3/:currentsurah/:start/:end"
             element={<Tasmee3 />}
           />
-          <Route path="/forget_password" element={<Forget_password />} />
           <Route
             path="/reset_password/:id/:token"
             element={<Reset_password />}
           />
+          <Route path="/forget_password" element={<Forget_password />} />
+
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/landing" element={<Landing />} />

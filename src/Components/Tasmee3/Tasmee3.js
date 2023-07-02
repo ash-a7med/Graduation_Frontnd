@@ -7,10 +7,10 @@ import quran from "./quran_no_tashkeel.json";
 import { useParams } from "react-router-dom";
 
 function Tasmee3() {
-  let text1 = "";
+  let text1 = "بسم الله الرحمن الرحيم";
   const { currentsurah, start, end } = useParams();
   for (let i = start - 1; i < end; ++i) {
-    text1 += quran[`${currentsurah}`][i].text;
+    text1 += " " + quran[`${currentsurah}`][i].text;
   }
 
   const [text2, setText2] = useState("");

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import reset_passwordfun from "./rest_passwordService";
+import { useNavigate } from "react-router-dom";
 
 function Reset_password() {
+  const navigate = useNavigate();
   const [pass, setPass] = useState("");
   const [cpass, setCpass] = useState("");
   const { id, token } = useParams();
@@ -11,11 +13,17 @@ function Reset_password() {
     e.preventDefault();
     const res = await reset_passwordfun(pass, cpass, id, token);
     setReseterr(res);
+    if (!reseterr) {
+      navigate("http://localhost:3000/login");
+    }
   };
 
   return (
     <div class="container" style={{ height: "100vh" }}>
-      <form className="login row justify-content-center align-items-center w-100 h-100" onSubmit={onSubmit}>
+      <form
+        className="login row justify-content-center align-items-center w-100 h-100"
+        onSubmit={onSubmit}
+      >
         <div className="col-md-8">
           <div className="form-group text-center mb-3">
             <label className="form-label">Enter New Password</label>

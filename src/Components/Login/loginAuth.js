@@ -20,8 +20,11 @@ const loginfun = async (email, pass) => {
   const result = await res.json();
 
   if (res.status === 200) {
-    console.log(result.user.username);
-    Cookies.set("user", JSON.stringify(result.user), {
+    console.log(result.nUser._doc.username);
+    Cookies.set("user", JSON.stringify(result.nUser._doc), {
+      expires: 7,
+    });
+    Cookies.set("token", JSON.stringify(result.nUser.token), {
       expires: 7,
     });
 
