@@ -1,14 +1,10 @@
 import React from "react";
+import "./Categories.css";
 import { Link } from "react-router-dom";
 
 function Categories() {
   return (
     <div>
-      <div className="profile-icon">
-        <Link to="/profile">
-          <i className="fa-solid fa-user-circle"></i>
-        </Link>
-      </div>
       <section className="cats py-5">
         <div className="container">
           <div className="row">
