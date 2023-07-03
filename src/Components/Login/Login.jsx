@@ -22,7 +22,7 @@ function Login() {
 
   useEffect(() => {
     if (loginerr === "login...") {
-      navigate("/home");
+      navigate("/categories");
     }
   }, [loginerr]);
 

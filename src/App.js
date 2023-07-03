@@ -24,6 +24,7 @@ import Landing from "./Components/LandingPage/Landing";
 import surahs from "./surah.json";
 import Navbar from "./Components/Navbar/Navbar";
 import LayoutsWithNavbar from "./Components/LayoutsWithNavbar";
+import QuranText from "./Components/QuranText/QuranText.js";
 
 function App() {
   const [currentuser, setCurrentuser] = useState("");
@@ -51,16 +52,18 @@ function App() {
               path="/tasmee3/:currentsurah/:start/:end"
               element={<Tasmee3 />}
             />
+            <Route
+              path="/tafseer/:surahID"
+              element={<Tafseer surahs={surahs} />}
+            />
+            <Route path="/suars" element={<Suars surahs={surahs} />} />
+            <Route path="/quranText" element={<QuranText />} />
           </Route>
 
           <Route path="/login" element={<Login />} />
 
           <Route path="/signup" element={<Signup />} />
-          <Route
-            path="/tafseer/:surahID"
-            element={<Tafseer surahs={surahs} />}
-          />
-          <Route path="/suars" element={<Suars surahs={surahs} />} />
+
           <Route
             path="/reset_password/:id/:token"
             element={<Reset_password />}
@@ -69,7 +72,7 @@ function App() {
 
           <Route path="/profile" element={<Profile user={currentuser} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/" element={<Landing />} />
+          <Route path="/landing" element={<Landing />} />
         </Routes>
       </div>
     </Router>

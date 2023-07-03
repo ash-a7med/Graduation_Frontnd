@@ -11,6 +11,29 @@ function Navbar(user) {
           ></i>
           {user.user.username}
         </a>
+
+        <span class="nav-item active ">
+          <a class="nav-link" href="/suars">
+            تفسير القران الكريم
+          </a>
+        </span>
+
+        <span class="nav-item active ">
+          <a class="nav-link" href="/categories">
+            المحطات السبع
+          </a>
+        </span>
+        <span class="nav-item active ">
+          <a class="nav-link" href="/quranText">
+            المصحف الشريف
+          </a>
+        </span>
+
+        <span class="nav-item active ">
+          <a class="nav-link" href="/landing">
+            الصفحة الرئسية
+          </a>
+        </span>
       </nav>
     </div>
   );

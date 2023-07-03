@@ -1,8 +1,18 @@
 import React from "react";
 import "./Landing.css";
 import logo from "../../assets/logo.jpg";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Landing() {
+  const naviagte = useNavigate();
+  const enter = () => {
+    const user = Cookies.get("user");
+    if (user) {
+      naviagte("/categories");
+    } else naviagte("/login");
+  };
+
   return (
     <div>
       <div className="line" id="Home">
@@ -25,6 +35,9 @@ function Landing() {
                 تم تصميم الموقع لمساعدتك أخي الكريم في حفظ ومراجعة القرآن الكريم
               </span>
             </div>
+            <button className="abtn" onClick={enter}>
+              دخول
+            </button>
             <div className="boxes">
               <div className="box">
                 <div className="topic">
