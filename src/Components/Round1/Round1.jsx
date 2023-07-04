@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function Round1({ surahs, setSurahs }) {

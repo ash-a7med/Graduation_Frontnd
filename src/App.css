@@ -89,6 +89,7 @@ form.login a
     justify-content: space-between;
     align-items: center; 
     height: 100%;
+    background-color: #ffffff85;
 }
 .cats .item p.count {
     font-weight: bold;
@@ -98,6 +99,9 @@ form.login a
     height:50px;
     line-height:50px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 .cats .item p
 {
@@ -156,4 +160,66 @@ form.login a
     transform: scale(1.2);
     background-color: #0db63a;
     color: white;
+}
+
+/* Button Hover */
+.buttonHover {
+  --color: #00A97F;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+    margin: auto;
+}
+
+.buttonHover::before,
+.buttonHover::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.buttonHover::before {
+  top: -1em;
+  left: -1em;
+}
+
+.buttonHover::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.buttonHover:hover::before,
+.buttonHover:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.buttonHover:hover {
+  color: rgb(10, 25, 30);
+}
+
+.buttonHover:active {
+  filter: brightness(.8);
 }

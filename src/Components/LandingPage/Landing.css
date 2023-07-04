@@ -55,7 +55,7 @@ a {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .side1 h1 {
     font-size: 35px;
   }
@@ -85,14 +85,19 @@ section .topic a {
 
 .about .boxes .box {
   margin: 10px 20px;
-  max-width: calc(100% / 3 - 50px);
+  width: calc(100% / 3 - 50px);
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
   cursor: default;
 }
-
+@media (max-width: 767px) {
+  .about .boxes .box {
+  width: 100% ;
+  
+}
+}
 /* Contact Page */
 
 .contact {

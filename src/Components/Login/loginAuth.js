@@ -1,8 +1,8 @@
 import Cookies from "js-cookie";
 
 const loginfun = async (email, pass) => {
-  if (email == "") return "please enter your email";
-  if (pass == "") return "please the password";
+  if (email === "") return "please enter your email";
+  if (pass === "") return "please the password";
 
   const res = await fetch("http://localhost:8000/api/v1/user/login", {
     method: "POST",

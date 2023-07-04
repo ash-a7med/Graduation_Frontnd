@@ -15,14 +15,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Outlet,
 } from "react-router-dom";
 import Tasmee3 from "./Components/Tasmee3/Tasmee3";
 import Profile from "./Components/ProfilePage/Profile";
 import About from "./Components/AboutPage/About";
 import Landing from "./Components/LandingPage/Landing";
 import surahs from "./surah.json";
-import Navbar from "./Components/Navbar/Navbar";
 import LayoutsWithNavbar from "./Components/LayoutsWithNavbar";
 import QuranText from "./Components/QuranText/QuranText.js";
 
@@ -41,6 +39,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<LayoutsWithNavbar user={currentuser} />}>
+            <Route index element={<Landing />} />
+            <Route path="/profile" element={<Profile user={currentuser} />} />
+          <Route path="/about" element={<About />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/round1" element={<Round1 surahs={surahs} />} />
             <Route
@@ -70,9 +71,8 @@ function App() {
           />
           <Route path="/forget_password" element={<Forget_password />} />
 
-          <Route path="/profile" element={<Profile user={currentuser} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/landing" element={<Landing />} />
+          
+          
         </Routes>
       </div>
     </Router>

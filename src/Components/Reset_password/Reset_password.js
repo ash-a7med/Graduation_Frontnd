@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Reset_password() {
   const navigate = useNavigate();
   const [pass, setPass] = useState("");
-  const [cpass, setCpass] = useState("");
+  const [cpass, setCpass] = useState("")
   const { id, token } = useParams();
   const [reseterr, setReseterr] = useState("");
   const onSubmit = async (e) => {
