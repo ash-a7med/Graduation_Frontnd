@@ -83,8 +83,8 @@ function Details({ surahs }) {
   }
 
   return (
-    <section class="signup">
-      <div class="container">
+    <section class="details">
+      <div class="details-container">
         <label>من</label>
         <select
           onChange={(event) => {
