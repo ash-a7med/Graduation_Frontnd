@@ -9,7 +9,7 @@ function Round1({ surahs, setSurahs }) {
       <div
         key={surah.number}
         className="cursor-pointer"
-        onClick={() => navigate(`/details/${surah.number}`)}
+        onClick={() => navigate(`/user/details/${surah.number}`)}
       >
         <div className="words">
           <h2 className="category_name">{surah.name}</h2>
@@ -24,8 +24,9 @@ function Round1({ surahs, setSurahs }) {
     <div className="cats py-5">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 ">{firstHalf}</div>
-          <div className="col-md-6 ">{secondHalf}</div>
+          {suarsItem.map((surah) => {
+            return <div className="col-md-3 ">{surah}</div>;
+          })}
         </div>
       </div>
     </div>

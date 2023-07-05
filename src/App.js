@@ -11,11 +11,7 @@ import Suars from "./Components/Suars/Suars";
 import Tafseer from "./Components/Tafseer/Tafseer";
 import Forget_password from "./Components/Forget_password/Forget_password";
 import Reset_password from "./Components/Reset_password/Reset_password";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Tasmee3 from "./Components/Tasmee3/Tasmee3";
 import Profile from "./Components/ProfilePage/Profile";
 import About from "./Components/AboutPage/About";
@@ -25,54 +21,43 @@ import LayoutsWithNavbar from "./Components/LayoutsWithNavbar";
 import QuranText from "./Components/QuranText/QuranText.js";
 
 function App() {
-  const [currentuser, setCurrentuser] = useState("");
-
-  useEffect(() => {
-    const user = Cookies.get("user");
-    if (user) {
-      setCurrentuser(JSON.parse(user));
-    }
-  }, []);
-
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LayoutsWithNavbar user={currentuser} />}>
-            <Route index element={<Landing />} />
-            <Route path="/profile" element={<Profile user={currentuser} />} />
-          <Route path="/about" element={<About />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/round1" element={<Round1 surahs={surahs} />} />
+          <Route path="/user" element={<LayoutsWithNavbar />}>
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="/user/about" element={<About />} />
+            <Route path="/user/categories" element={<Categories />} />
+            <Route path="/user/round1" element={<Round1 surahs={surahs} />} />
             <Route
-              path="/details/:currentSurah"
+              path="/user/details/:currentSurah"
               element={<Details surahs={surahs} />}
             />
 
             <Route
-              path="/tasmee3/:currentsurah/:start/:end"
+              path="/user/tasmee3/:currentsurah/:start/:end"
               element={<Tasmee3 />}
             />
             <Route
-              path="/tafseer/:surahID"
+              path="/user/tafseer/:surahID"
               element={<Tafseer surahs={surahs} />}
             />
-            <Route path="/suars" element={<Suars surahs={surahs} />} />
-            <Route path="/quranText" element={<QuranText />} />
+            <Route path="/user/suars" element={<Suars surahs={surahs} />} />
+            <Route path="/user/quranText" element={<QuranText />} />
           </Route>
 
+          <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
 
           <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<About />} />
 
           <Route
             path="/reset_password/:id/:token"
             element={<Reset_password />}
           />
           <Route path="/forget_password" element={<Forget_password />} />
-
-          
-          
         </Routes>
       </div>
     </Router>

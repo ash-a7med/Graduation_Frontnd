@@ -1,38 +1,49 @@
-import React from "react";
+import Cookies from "js-cookie";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-function Navbar(user) {
+function Navbar() {
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    const user = Cookies.get("user");
+    if (user) {
+      setUser(JSON.parse(user));
+    }
+  }, []);
+
   return (
     <div>
       <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="/profile">
+        <Link className="navbar-brand" to="/user/profile">
           <i
             className="fa-solid fa-user-circle"
             style={{ width: "30px", height: "30px" }}
           ></i>
-          {user.user.username}
-        </a>
+          {user.username}
+        </Link>
 
-        <span className="nav-item active ">
-          <a className="nav-link" href="/suars">
+        <span className="nav-item  ">
+          <Link className="nav-link " to="/user/suars">
             تفسير القران الكريم
-          </a>
+          </Link>
         </span>
 
         <span className="nav-item active ">
-          <a className="nav-link" href="/categories">
+          <Link className="nav-link" to="/user/categories">
             المحطات السبع
-          </a>
+          </Link>
         </span>
         <span className="nav-item active ">
-          <a className="nav-link" href="/quranText">
+          <Link className="nav-link" to="/user/quranText">
             المصحف الشريف
-          </a>
+          </Link>
         </span>
 
         <span className="nav-item active ">
-          <a className="nav-link" href="/">
+          <Link className="nav-link" to="/">
             الصفحة الرئسية
-          </a>
+          </Link>
         </span>
       </nav>
     </div>

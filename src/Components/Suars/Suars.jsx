@@ -8,7 +8,7 @@ function Suars({ surahs }) {
       <div key={surah.number} className="cursor-pointer">
         <div
           className="words"
-          onClick={() => naviagte(`/tafseer/${surah.number}`)}
+          onClick={() => naviagte(`/user/tafseer/${surah.number}`)}
         >
           <h2 className="category_name">{surah.name}</h2>
         </div>

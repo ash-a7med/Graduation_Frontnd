@@ -9,7 +9,7 @@ function Landing() {
   const enter = () => {
     const user = Cookies.get("user");
     if (user) {
-      naviagte("/categories");
+      naviagte("/user/categories");
     } else naviagte("/login");
   };
 
@@ -35,42 +35,43 @@ function Landing() {
                 تم تصميم الموقع لمساعدتك أخي الكريم في حفظ ومراجعة القرآن الكريم
               </span>
             </div>
-            <button className="buttonHover w-50 m-auto" onClick={enter}>دخول</button>
-            
-              <div className="boxes row">
-                <div className="box">
-                  <div className="topic">
-                    <p>السبع مراحل</p>
-                  </div>
-                  <p>
-                    الموقع يستند إلى نظام السبع مراحل في الحفظ. حيث يتم تقسيم كتاب
-                    الله إلى سبعة أقسام وتنتقل من قسم إلى آخر. مما يسهل عليك الحفظ
-                    ويترك انطباعًا بالتقدم والتطور الدائم.
-                  </p>
+            <button className="buttonHover w-50 m-auto" onClick={enter}>
+              دخول
+            </button>
+
+            <div className="boxes row">
+              <div className="box">
+                <div className="topic">
+                  <p>السبع مراحل</p>
                 </div>
-                <div className="box">
-                  <div className="topic">
-                    <p>التكرار</p>
-                  </div>
-                  <p>
-                    نعتمد في الحفظ على تكرار الآيات على مسمعك مع مراعاة أحكام
-                    التجويد. حتى يستقر في عقلك بصورة صحيحة. ويمكنك التحكم في عدد
-                    مرات التكرار والآيات.
-                  </p>
+                <p>
+                  الموقع يستند إلى نظام السبع مراحل في الحفظ. حيث يتم تقسيم كتاب
+                  الله إلى سبعة أقسام وتنتقل من قسم إلى آخر. مما يسهل عليك الحفظ
+                  ويترك انطباعًا بالتقدم والتطور الدائم.
+                </p>
+              </div>
+              <div className="box">
+                <div className="topic">
+                  <p>التكرار</p>
                 </div>
-                <div className="box">
-                  <div className="topic">
-                    <p>التسميع</p>
-                  </div>
-                  <p>
-                    بعد أن تنتهي من الحفظ يأتي دور التسميع. ويرتكز الموقع على نظام
-                    التعرف على الكلام الذي يعمل بالذكاء الاصطناعي. حتى يتمكن من
-                    تحديد الأخطاء التي تقع بها وإظهارها لك.
-                  </p>
+                <p>
+                  نعتمد في الحفظ على تكرار الآيات على مسمعك مع مراعاة أحكام
+                  التجويد. حتى يستقر في عقلك بصورة صحيحة. ويمكنك التحكم في عدد
+                  مرات التكرار والآيات.
+                </p>
+              </div>
+              <div className="box">
+                <div className="topic">
+                  <p>التسميع</p>
                 </div>
+                <p>
+                  بعد أن تنتهي من الحفظ يأتي دور التسميع. ويرتكز الموقع على نظام
+                  التعرف على الكلام الذي يعمل بالذكاء الاصطناعي. حتى يتمكن من
+                  تحديد الأخطاء التي تقع بها وإظهارها لك.
+                </p>
               </div>
             </div>
-            
+          </div>
         </section>
       </div>
       <div>

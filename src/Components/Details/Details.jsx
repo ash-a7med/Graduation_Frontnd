@@ -136,7 +136,9 @@ function Details({ surahs }) {
 
       <button
         class="abtn"
-        onClick={() => navigate(`/tasmee3/${currentSurah}/${start}/${end}`)}
+        onClick={() =>
+          navigate(`/user/tasmee3/${currentSurah}/${start}/${end}`)
+        }
       >
         تسميع
       </button>

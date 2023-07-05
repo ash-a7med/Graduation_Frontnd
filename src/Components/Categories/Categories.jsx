@@ -8,8 +8,8 @@ function Categories() {
       <section className="cats py-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 mb-3">
-              <Link to="/round1" className="item">
+            <div className="col-md-12 mb-3">
+              <Link to="/user/round1" className="item">
                 <div>
                   <p>المحطة الأولي</p>
                   <p>جزء عم</p>
@@ -17,17 +17,17 @@ function Categories() {
                 <p className="count">1</p>
               </Link>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-12 mb-3">
               <div className="item">
                 <div>
-                  <i className="fa-solid fa-lock text-dark "></i>
+                  <i class="fa-solid fa-lock text-dark "></i>
                   <p>المحطة الثانية</p>
                   <p>من سورة تبارك إلى سورة ق</p>
                 </div>
                 <p className="count">2</p>
               </div>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-12 mb-3">
               <div className="item">
                 <div>
                   <i className="fa-solid fa-lock text-dark "></i>
@@ -37,7 +37,7 @@ function Categories() {
                 <p className="count">3</p>
               </div>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-12 mb-3">
               <div className="item">
                 <div>
                   <i className="fa-solid fa-lock text-dark "></i>
@@ -47,7 +47,7 @@ function Categories() {
                 <p className="count">4</p>
               </div>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-12 mb-3">
               <div className="item">
                 <div>
                   <i className="fa-solid fa-lock text-dark "></i>
@@ -57,7 +57,7 @@ function Categories() {
                 <p className="count">5</p>
               </div>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-12 mb-3">
               <div className="item">
                 <div>
                   <i className="fa-solid fa-lock text-dark "></i>
@@ -67,7 +67,7 @@ function Categories() {
                 <p className="count">6</p>
               </div>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-12 mb-3">
               <div className="item">
                 <div>
                   <i className="fa-solid fa-lock text-dark "></i>

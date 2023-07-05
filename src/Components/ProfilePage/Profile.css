@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-h3 {
+.a3 {
   font-size: 18px;
   font-weight: 500;
   color: #33363b;
@@ -20,7 +20,7 @@ p {
   height: auto;
   background-color: #ffffff;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 40px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
 }
 .card_profile_img {
@@ -71,7 +71,7 @@ p {
   margin-top: -10px;
 }
 
-.btn {
+.abtn {
   padding: 16px;
   width: 100%;
   border: none;

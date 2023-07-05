@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 
-function LayoutsWithNavbar(user) {
+function LayoutsWithNavbar() {
   return (
     <div>
-      <Navbar user={user.user} />
+      <Navbar />
       <Outlet />
     </div>
   );
