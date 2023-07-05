@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Suar from "./Surah.json";
 import { createAudio, numbers } from "./DetailsService";
 import { useNavigate, useParams } from "react-router-dom";
+import "../Details/Details.css";
 
 const styles = {
   container: {
@@ -86,7 +87,6 @@ function Details({ surahs }) {
       <div class="container">
         <label>من</label>
         <select
-          className="form-group text-center mb-3"
           onChange={(event) => {
             setStart(event.target.value);
             setEnd(event.target.value);
@@ -104,15 +104,7 @@ function Details({ surahs }) {
         >
           {numbers(surahs[currentSurah - 1].numberOfAyahs)}
         </select>
-        <button
-          onClick={() => {
-            turnOnAudio();
-          }}
-          disabled={false}
-        >
-          {" "}
-          استمع
-        </button>
+
         <label>عدد مرات تكرار المقطع </label>
         <select
           onChange={(event) => {
@@ -132,16 +124,25 @@ function Details({ surahs }) {
           {numbers(50)}
         </select>
       </div>
+      <div className="button-container">
+        <button
+          onClick={() => {
+            turnOnAudio();
+          }}
+          disabled={false}
+        >
+          {" "}
+          استماع
+        </button>
+        <button
+          onClick={() =>
+            navigate(`/user/tasmee3/${currentSurah}/${start}/${end}`)
+          }
+        >
+          تسميع
+        </button>
+      </div>
       <div>{createAyatText()}</div>
-
-      <button
-        class="abtn"
-        onClick={() =>
-          navigate(`/user/tasmee3/${currentSurah}/${start}/${end}`)
-        }
-      >
-        تسميع
-      </button>
     </section>
   );
 }
