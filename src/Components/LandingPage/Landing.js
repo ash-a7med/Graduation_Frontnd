@@ -17,7 +17,7 @@ function Landing() {
   return (
     <div className="home-container">
       <div className="header">
-        <div className="icon">
+        <div className="header-icon">
           <img src={book} height={40} alt="Book Icon"/>
         </div>
         <div className="side1">El-Kottab</div>
