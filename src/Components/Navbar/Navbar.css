@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #7fbe81;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.navbar-brand i {
+  width: 60px;
+  height: 60px;
+  margin-right: 0px;
+}
+
+.navbar-brand:hover {
+  color: #212529;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  color: #212529;
+}

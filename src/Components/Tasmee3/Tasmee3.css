@@ -1,0 +1,42 @@
+.mic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.start-button {
+  padding: 5px 60px;
+  font-size: 16px;
+  background-color: #44a947;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.stop-button {
+  padding: 5px 60px;
+  font-size: 16px;
+  background-color: #ff3232;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.transcript {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.text-diff {
+  margin-top: 20px;
+}
+
+.text-diff span {
+  margin-right: 3px;
+  padding: 3px 5px;
+}

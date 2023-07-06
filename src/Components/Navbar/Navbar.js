@@ -1,6 +1,8 @@
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "./Navbar.css";
 
 function Navbar() {
   const [user, setUser] = useState("");
@@ -14,7 +16,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar">
         <Link className="navbar-brand" to="/user/profile">
           <i
             className="fa-solid fa-user-circle"
@@ -25,24 +27,24 @@ function Navbar() {
 
         <span className="nav-item  ">
           <Link className="nav-link " to="/user/suars">
-            <span style={{ color: "black" }}>تفسير القران الكريم</span>
+            تفسير القرآن الكريم
           </Link>
         </span>
 
         <span className="nav-item active ">
           <Link className="nav-link" to="/user/categories">
-            <span style={{ color: "black" }}>المحطات السبع</span>
+            المحطات السبع
           </Link>
         </span>
         <span className="nav-item active ">
           <Link className="nav-link" to="/user/quranText">
-            <span style={{ color: "black" }}>المصحف الشريف</span>
+            المصحف الشريف
           </Link>
         </span>
 
         <span className="nav-item active ">
           <Link className="nav-link" to="/">
-            <span style={{ color: "black" }}> الصفحة الرئسية</span>
+            الصفحة الرئيسية
           </Link>
         </span>
       </nav>
