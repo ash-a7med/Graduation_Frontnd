@@ -25,24 +25,24 @@ function Navbar() {
 
         <span className="nav-item  ">
           <Link className="nav-link " to="/user/suars">
-            تفسير القران الكريم
+            <span style={{ color: "black" }}>تفسير القران الكريم</span>
           </Link>
         </span>
 
         <span className="nav-item active ">
           <Link className="nav-link" to="/user/categories">
-            المحطات السبع
+            <span style={{ color: "black" }}>المحطات السبع</span>
           </Link>
         </span>
         <span className="nav-item active ">
           <Link className="nav-link" to="/user/quranText">
-            المصحف الشريف
+            <span style={{ color: "black" }}>المصحف الشريف</span>
           </Link>
         </span>
 
         <span className="nav-item active ">
           <Link className="nav-link" to="/">
-            الصفحة الرئسية
+            <span style={{ color: "black" }}> الصفحة الرئسية</span>
           </Link>
         </span>
       </nav>

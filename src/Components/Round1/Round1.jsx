@@ -22,10 +22,10 @@ function Round1({ surahs, setSurahs }) {
   const secondHalf = suarsItem.slice(suarsItemLength);
   return (
     <div className="cats py-5">
-      <div className="container">
+      <div className="container" style={{ marginLeft: "80px" }}>
         <div className="row">
           {suarsItem.map((surah) => {
-            return <div className="col-md-3 ">{surah}</div>;
+            return <div style={{ margin: "0px 20px" }}>{surah}</div>;
           })}
         </div>
       </div>

@@ -83,67 +83,68 @@ function Details({ surahs }) {
   }
 
   return (
-    <section class="details">
-      <div class="details-container">
-        <label>من</label>
-        <select
-          onChange={(event) => {
-            setStart(event.target.value);
-            setEnd(event.target.value);
-          }}
-          value={start}
-        >
-          {numbers(surahs[currentSurah - 1].numberOfAyahs)}
-        </select>
-        <label>الي</label>
-        <select
-          onChange={(event) => {
-            if (event.target.value >= start) setEnd(event.target.value);
-          }}
-          value={end}
-        >
-          {numbers(surahs[currentSurah - 1].numberOfAyahs)}
-        </select>
+    <div className="container">
+      <section class="details">
+        <div class="details-container">
+          <label>من</label>
+          <select
+            onChange={(event) => {
+              setStart(event.target.value);
+              setEnd(event.target.value);
+            }}
+            value={start}
+          >
+            {numbers(surahs[currentSurah - 1].numberOfAyahs)}
+          </select>
+          <label>الي</label>
+          <select
+            onChange={(event) => {
+              if (event.target.value >= start) setEnd(event.target.value);
+            }}
+            value={end}
+          >
+            {numbers(surahs[currentSurah - 1].numberOfAyahs)}
+          </select>
 
-        <label>عدد مرات تكرار المقطع </label>
-        <select
-          onChange={(event) => {
-            setNum_t(event.target.value);
-          }}
-          value={num_t}
-        >
-          {numbers(10)}
-        </select>
-        <label>عدد مرات تكرار الأية </label>
-        <select
-          onChange={(event) => {
-            setNum_a(event.target.value);
-          }}
-          value={num_a}
-        >
-          {numbers(50)}
-        </select>
-      </div>
-      <div className="button-container">
-        <button
-          onClick={() => {
-            turnOnAudio();
-          }}
-          disabled={false}
-        >
-          {" "}
-          استماع
-        </button>
-        <button
-          onClick={() =>
-            navigate(`/user/tasmee3/${currentSurah}/${start}/${end}`)
-          }
-        >
-          تسميع
-        </button>
-      </div>
-      <div>{createAyatText()}</div>
-    </section>
+          <label>عدد مرات تكرار المقطع </label>
+          <select
+            onChange={(event) => {
+              setNum_t(event.target.value);
+            }}
+            value={num_t}
+          >
+            {numbers(10)}
+          </select>
+          <label>عدد مرات تكرار الأية </label>
+          <select
+            onChange={(event) => {
+              setNum_a(event.target.value);
+            }}
+            value={num_a}
+          >
+            {numbers(10)}
+          </select>
+        </div>
+        <div className="button-container">
+          <button
+            onClick={() => {
+              turnOnAudio();
+            }}
+            disabled={false}
+          >
+            استماع
+          </button>
+          <button
+            onClick={() =>
+              navigate(`/user/tasmee3/${currentSurah}/${start}/${end}`)
+            }
+          >
+            تسميع
+          </button>
+        </div>
+        <div>{createAyatText()}</div>
+      </section>
+    </div>
   );
 }
 

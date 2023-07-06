@@ -5,6 +5,7 @@ import SpeechRecognition, {
 import { diffChars } from "diff";
 import quran from "./quran_no_tashkeel.json";
 import { useParams } from "react-router-dom";
+import "../Tasmee3/Tasmee3.css";
 
 function Tasmee3() {
   let text1 = "بسم الله الرحمن الرحيم";
@@ -40,7 +41,7 @@ function Tasmee3() {
 
   return (
     <div>
-      <p>Microphone: {listening ? "on" : "off"}</p>
+      <div>Microphone: {listening ? "on" : "off"}</div>
       <button onClick={startListen}>Start</button>
       <button onClick={endListen}>Stop</button>
 
