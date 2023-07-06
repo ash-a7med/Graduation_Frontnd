@@ -1,35 +1,34 @@
 import React from "react";
 import "./Landing.css";
-import logo from "../../assets/logo.jpg";
+import book from '../../assets/book.png';
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
+
 function Landing() {
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const enter = () => {
     const user = Cookies.get("user");
     if (user) {
-      naviagte("/user/categories");
-    } else naviagte("/login");
+      navigate("/user/categories");
+    } else navigate("/login");
   };
 
   return (
-    <div className="container">
-      <div className="line" id="Home">
-        <div className="side1">
-          <h1>El-Kottab</h1>
+    <div className="home-container">
+      <div className="header">
+        <div className="icon">
+          <img src={book} height={40} alt="Book Icon"/>
         </div>
-        <div className="side2">
-          <img src={logo} width="500" alt="Logo" />
-        </div>
+        <div className="side1">El-Kottab</div>
       </div>
       <div>
-        <section className="about" id="My Projects">
+        <section className="about">
           <div className="content">
             <br />
             <br />
             <div className="title">
-              <span>مرحبًا بك في النسخة الأولى من موقع الكتاب</span>
+              <span>مرحبًا بك في النسخة الأولى من موقع الكتّاب</span>
               <br />
               <span>
                 تم تصميم الموقع لمساعدتك أخي الكريم في حفظ ومراجعة القرآن الكريم
@@ -83,19 +82,19 @@ function Landing() {
                   <span> تواصل معنا </span>
                 </div>
                 <div className="content1">
-                  يسعدنا ان تراسلنا في حالة وجود اي اخطاء وسوف نحاول دائما ان
+                  يسعدنا ان تراسلنا في حالة وجود أي أخطاء وسوف نحاول دائما أن
                   نحسن من موفعنا ومن خدماتنا
-                  <h3>
-                    <a href="mailto: abc@example.com">Gmail</a>
-                  </h3>
+                  <span>
+                    <a href="mailto: abc@example.com"> gmail </a>
+                  </span>
                 </div>
                 <div className="title1">
                   <span>More Information</span>
                 </div>
                 <div className="content1">
-                  الموقع يعتمد علي الذكاء الصناعي لذلك يوجد نسبة خطأ وارده نعتذر
-                  عنها مقدما ونتبرأ منها امام الله عز وجل فقد بذلنا جهدنا في ان
-                  يكون الموقع في افضل وادق صوره
+                  الموقع يعتمد على الذكاء الصناعي لذلك يوجد نسبة خطأ وارده نعتذر
+                  عنها مقدما ونتبرأ منها أمام الله عز وجل فقد بذلنا جهدنا في أن
+                  يكون الموقع في أفضل وأدق صورة
                 </div>
               </div>
             </div>
