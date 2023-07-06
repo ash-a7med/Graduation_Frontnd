@@ -142,7 +142,7 @@ function Details({ surahs }) {
             تسميع
           </button>
         </div>
-        <div>{createAyatText()}</div>
+        <div className="surah-style">{createAyatText()}</div>
       </section>
     </div>
   );
