@@ -2,16 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { diffChars } from "diff";
+import { diffChars, diffWords } from "diff";
 import quran from "./quran_no_tashkeel.json";
 import { useParams } from "react-router-dom";
 import "./Tasmee3.css";
 
 function Tasmee3() {
-  let text1 = "بسم الله الرحمن الرحيم";
+  let text1 = "";
   const { currentsurah, start, end } = useParams();
   for (let i = start - 1; i < end; ++i) {
-    text1 += " " + quran[`${currentsurah}`][i].text;
+    text1 += (i == start - 1 ? "" : " ") + quran[`${currentsurah}`][i].text;
   }
 
   const [text2, setText2] = useState("");
@@ -35,7 +35,7 @@ function Tasmee3() {
     SpeechRecognition.stopListening();
 
     resetTranscript();
-    setDiff(diffChars(text1, text2));
+    setDiff(diffWords(text1, text2));
     setStop(true);
   }
 
@@ -43,10 +43,10 @@ function Tasmee3() {
     <div className="mic-container">
       <p>Microphone: {listening ? "on" : "off"}</p>
       <button className="start-button" onClick={startListen}>
-        Start
+        ابدأ
       </button>
       <button className="stop-button" onClick={endListen}>
-        Stop
+        توقف
       </button>
 
       <p className="transcript">{transcript}</p>

@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "@fortawesome/fontawesome-free/css/all.css";
+//import "@fortawesome/fontawesome-free/css/all.css";
 import "./Navbar.css";
 
 function Navbar() {
@@ -24,6 +24,11 @@ function Navbar() {
           ></i>
           {user.username}
         </Link>
+        <span className="nav-item active ">
+          <Link className="nav-link" to="/user/categories">
+            المحطات السبع
+          </Link>
+        </span>
 
         <span className="nav-item  ">
           <Link className="nav-link " to="/user/suars">
@@ -31,11 +36,6 @@ function Navbar() {
           </Link>
         </span>
 
-        <span className="nav-item active ">
-          <Link className="nav-link" to="/user/categories">
-            المحطات السبع
-          </Link>
-        </span>
         <span className="nav-item active ">
           <Link className="nav-link" to="/user/quranText">
             المصحف الشريف

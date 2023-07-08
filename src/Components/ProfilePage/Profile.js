@@ -37,8 +37,14 @@ function Profile() {
             <h3 className="a3">لم يحدد بعد</h3>
           </div>
         </div>
-        <Link to="/">
-          <div className="abtn">العودة للصفحة الرئيسية</div>
+        <Link
+          to="/"
+          onClick={() => {
+            Cookies.remove("token");
+            Cookies.remove("user");
+          }}
+        >
+          <div className="abtn">تسجيل الخروج </div>
         </Link>
       </div>
     </div>

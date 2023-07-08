@@ -22,7 +22,8 @@ function Suars({ surahs }) {
   return (
     <div className="cats py-5">
       <div className="container">
-        <h4 className="text-center">{" تفسير القرأن الكريم "}</h4>
+        <h4 className="text-center">{" التفسير الميسر "}</h4>
+
         <Suspense fallback={<div>Loading...</div>}>
           <div className="row">
             <div className="col-md-6 ">{firstHalf}</div>

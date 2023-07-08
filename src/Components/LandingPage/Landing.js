@@ -1,9 +1,8 @@
 import React from "react";
 import "./Landing.css";
-import book from '../../assets/book.png';
-import { useNavigate } from "react-router-dom";
+import book from "../../assets/book.png";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-
 
 function Landing() {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ function Landing() {
     <div className="home-container">
       <div className="header">
         <div className="header-icon">
-          <img src={book} height={40} alt="Book Icon"/>
+          <img src={book} height={40} alt="Book Icon" />
         </div>
         <div className="side1">El-Kottab</div>
       </div>
@@ -34,7 +33,11 @@ function Landing() {
                 تم تصميم الموقع لمساعدتك أخي الكريم في حفظ ومراجعة القرآن الكريم
               </span>
             </div>
-            <button className="buttonHover w-50 m-auto" onClick={enter}>
+            <button
+              className="buttonHover w-50 "
+              style={{ marginTop: "60px " }}
+              onClick={enter}
+            >
               دخول
             </button>
 
@@ -83,13 +86,13 @@ function Landing() {
                 </div>
                 <div className="content1">
                   يسعدنا ان تراسلنا في حالة وجود أي أخطاء وسوف نحاول دائما أن
-                  نحسن من موفعنا ومن خدماتنا
+                  نحسن من موقعنا ومن خدماتنا
                   <span>
-                    <a href="mailto: abc@example.com"> gmail </a>
+                    <Link to="mailto: elkottab@gmail.com"> Gmail </Link>
                   </span>
                 </div>
-                <div className="title1">
-                  <span>More Information</span>
+                <div className="title1" style={{ marginTop: "50px" }}>
+                  <span>تنبيه هام</span>
                 </div>
                 <div className="content1">
                   الموقع يعتمد على الذكاء الصناعي لذلك يوجد نسبة خطأ وارده نعتذر

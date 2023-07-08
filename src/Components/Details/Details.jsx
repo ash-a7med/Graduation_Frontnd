@@ -6,28 +6,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../Details/Details.css";
 
 const styles = {
-  container: {
-    flex: 1,
-  },
-  scroll: {
-    flex: 1,
-    padding: 7,
-  },
-  surahPage: {
-    flex: 1,
-    marginTop: 15,
-    textAlign: "justify",
-  },
-
-  ayat: {
-    flex: 1,
-
-    fontSize: 30,
-  },
-
-  number: {
-    fontSize: 18,
-  },
+  width: "700px",
+  height: "auto",
+  margin: "0 auto",
+  marginTop: "40px",
 };
 
 function Details({ surahs }) {
@@ -38,11 +20,33 @@ function Details({ surahs }) {
   const [end, setEnd] = useState(1);
   let [num_t, setNum_t] = useState(1);
   let [num_a, setNum_a] = useState(1);
+  let currentPos = useRef(0);
+  const arabnum = {
+    0: "٠",
+    1: "١",
+    2: "٢",
+    3: "٣",
+    4: "٤",
+    5: "٥",
+    6: "٦",
+    7: "٧",
+    8: "٨",
+    9: "٩",
+  };
+
+  function convertToArabic(num) {
+    let st = String(num).split("");
+    st = st.map((ch) => arabnum[Number(ch)]);
+    st = st.join("");
+    return st;
+  }
 
   async function playAudio(AyatAudio) {
     for (let t = 0; t < num_t; t++) {
       for (let i = 0; i < AyatAudio.length; i++) {
         audioRef.current = AyatAudio[i];
+        currentPos = i + Number(start);
+        console.log(currentPos);
 
         for (let a = 0; a < num_a; a++) {
           audioRef.current.play();
@@ -62,23 +66,13 @@ function Details({ surahs }) {
 
   function createAyatText() {
     return (
-      <safeAreaView style={styles.container}>
-        <divider
-          orientation="vertical"
-          width={5}
-          style={{ borderBottomColor: "#545353" }}
-        />
-
-        <text style={styles.surahPage} adjustsFontSizeToFit>
-          {surahs[currentSurah - 1].ayahs.map((aya, index) => (
-            <text key={index} allowFontScaling={false} selectable={true}>
-              <text selectable={true} style={styles.ayat}>
-                {aya.text}
-              </text>
-            </text>
-          ))}
-        </text>
-      </safeAreaView>
+      <div style={styles}>
+        {surahs[currentSurah - 1].ayahs.map((aya, index) => (
+          <text key={index}>
+            {aya.text} ﴿{convertToArabic(index + Number(1))}﴾{" "}
+          </text>
+        ))}
+      </div>
     );
   }
 
