@@ -21,7 +21,7 @@ function Signup() {
 
   useEffect(() => {
     if (signuperr === "user created successfully") {
-      navigate("/home");
+      navigate("/user/categories");
     }
   }, [signuperr]);
 
