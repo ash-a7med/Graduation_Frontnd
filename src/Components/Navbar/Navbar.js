@@ -17,13 +17,18 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <Link className="navbar-brand" to="/user/profile">
+        <Link
+          className="navbar-brand"
+          to="/user/profile"
+          style={{ marginLeft: "20%" }}
+        >
           <i
             className="fa-solid fa-user-circle"
             style={{ width: "30px", height: "30px" }}
           ></i>
-          {user.username}
+          <span style={{ margin: "50px 10px" }}>{user.username}</span>
         </Link>
+
         <span className="nav-item active ">
           <Link className="nav-link" to="/user/categories">
             المحطات السبع
@@ -42,7 +47,7 @@ function Navbar() {
           </Link>
         </span>
 
-        <span className="nav-item active ">
+        <span className="nav-item active " style={{ marginLeft: "15%" }}>
           <Link className="nav-link" to="/">
             الصفحة الرئيسية
           </Link>

@@ -22,7 +22,8 @@
 }
 
 .navbar-brand:hover {
-  color: #212529;
+  transition: 0.3s;
+  color: rgb(43, 42, 42);
 }
 
 .nav-link {
@@ -32,5 +33,6 @@
 }
 
 .nav-link:hover {
-  color: #212529;
+  transition: 0.3s;
+  color: rgb(34, 33, 33);
 }

@@ -6,10 +6,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../Details/Details.css";
 
 const styles = {
+  textAlign: "justify",
   width: "700px",
   height: "auto",
   margin: "0 auto",
   marginTop: "40px",
+  color: "grey",
+  fontSize: "22px",
 };
 
 function Details({ surahs }) {
@@ -21,6 +24,7 @@ function Details({ surahs }) {
   let [num_t, setNum_t] = useState(1);
   let [num_a, setNum_a] = useState(1);
   let currentPos = useRef(0);
+  let [curPos, setCurPos] = useState(0);
   const arabnum = {
     0: "٠",
     1: "١",
@@ -46,6 +50,7 @@ function Details({ surahs }) {
       for (let i = 0; i < AyatAudio.length; i++) {
         audioRef.current = AyatAudio[i];
         currentPos = i + Number(start);
+        setCurPos(currentPos);
         console.log(currentPos);
 
         for (let a = 0; a < num_a; a++) {
@@ -57,6 +62,7 @@ function Details({ surahs }) {
         }
       }
     }
+    setCurPos(0);
   }
 
   function turnOnAudio() {
@@ -68,7 +74,12 @@ function Details({ surahs }) {
     return (
       <div style={styles}>
         {surahs[currentSurah - 1].ayahs.map((aya, index) => (
-          <text key={index}>
+          <text
+            key={index}
+            style={{
+              background: `${index + 1 == curPos ? " #FFFFCC" : ""}`,
+            }}
+          >
             {aya.text} ﴿{convertToArabic(index + Number(1))}﴾{" "}
           </text>
         ))}

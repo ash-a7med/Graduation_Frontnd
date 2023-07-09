@@ -24,8 +24,10 @@ function Tafseer({ surahs }) {
           return (
             <div key={surah.id} className="quran-tafseer">
               <span className="ayah">
-                ({surah.aya}) {surah.arabic_text} :{" "}
+                ({surah.aya}) {surah.arabic_text}{" "}
               </span>
+              <br />
+              <br />
               <span className="tafseer">{surah.translation}</span>
             </div>
           );
