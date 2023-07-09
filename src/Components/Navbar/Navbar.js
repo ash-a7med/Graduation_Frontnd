@@ -20,7 +20,7 @@ function Navbar() {
         <Link
           className="navbar-brand"
           to="/user/profile"
-          style={{ marginLeft: "20%" }}
+          style={{ marginLeft: "11%" }}
         >
           <i
             className="fa-solid fa-user-circle"
@@ -47,7 +47,7 @@ function Navbar() {
           </Link>
         </span>
 
-        <span className="nav-item active " style={{ marginLeft: "15%" }}>
+        <span className="nav-item active " style={{ marginLeft: "25%" }}>
           <Link className="nav-link" to="/">
             الصفحة الرئيسية
           </Link>
