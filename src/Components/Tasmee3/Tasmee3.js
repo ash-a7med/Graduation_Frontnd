@@ -60,9 +60,9 @@ function Tasmee3() {
                   key={index}
                   style={{
                     backgroundColor: difference.added
-                      ? "green"
-                      : difference.removed
                       ? "red"
+                      : difference.removed
+                      ? "green"
                       : "transparent",
                     color:
                       difference.added || difference.removed
