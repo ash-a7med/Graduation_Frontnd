@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import "./App.css";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
@@ -19,6 +19,7 @@ import Landing from "./Components/LandingPage/Landing";
 import surahs from "./surah.json";
 import LayoutsWithNavbar from "./Components/LayoutsWithNavbar";
 import QuranText from "./Components/QuranText/QuranText.js";
+import Daqeeq from "./Components/Daqeeq/Daqeeq";
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
               element={<Tasmee3 />}
             />
             <Route
+              path="/user/daqeeq/:currentsurah/:start/:end"
+              element={<Daqeeq />}
+            />
+            <Route
               path="/user/tafseer/:surahID"
               element={<Tafseer surahs={surahs} />}
             />
@@ -58,6 +63,9 @@ function App() {
             element={<Reset_password />}
           />
           <Route path="/forget_password" element={<Forget_password />} />
+
+
+          <Route path="*" element={<h1>404 <br></br>Not Found</h1>} />
         </Routes>
       </div>
     </Router>

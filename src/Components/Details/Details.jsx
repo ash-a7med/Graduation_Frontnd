@@ -146,6 +146,13 @@ function Details({ surahs }) {
           >
             تسميع
           </button>
+          <button
+            onClick={() =>
+              navigate(`/user/daqeeq/${currentSurah}/${start}/${end}`)
+            }
+          >
+            تحقق
+          </button>
         </div>
         <div className="surah-style">{createAyatText()}</div>
       </section>
